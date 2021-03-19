@@ -239,7 +239,7 @@ if __name__ == '__main__':
         if location == 'lucknow':
             p = sc.objdict(
                 pop_infected=150,
-                beta=np.random.uniform(0.014, 0.02),
+                beta=np.random.uniform(0.01, 0.02),
                 rel_symp_prob=np.random.uniform(0.25, 1.0),
                 symp_prob=np.random.uniform(0.025, 0.075),
             )
@@ -271,7 +271,7 @@ if __name__ == '__main__':
     elif whattorun=='sweeps':
 
         n_seeds = [10, 2][debug]
-        n_draws = [2000, 10][debug]
+        n_draws = [10000, 10][debug]
         n_sims = n_seeds * n_draws
         sims_file = f'{cachefolder}/all_sims.obj'
         count = 0
