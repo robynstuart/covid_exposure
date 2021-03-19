@@ -270,8 +270,8 @@ if __name__ == '__main__':
     # Quick calibration
     elif whattorun=='sweeps':
 
-        n_seeds = [20, 2][debug]
-        n_draws = [1000, 10][debug]
+        n_seeds = [10, 2][debug]
+        n_draws = [2000, 10][debug]
         n_sims = n_seeds * n_draws
         sims_file = f'{cachefolder}/all_sims.obj'
         count = 0
@@ -335,5 +335,6 @@ if __name__ == '__main__':
         df = pd.DataFrame(data=d)
 
         if 1:#not debug:
-            cv.save(f'{resfolder}/{location}_sweeps.obj', df)
+            cv.save(f'{resfolder}/{location}_sweeps.df', df)
+            sc.saveobj(f'{resfolder}/{location}_sweeps.obj', d)
         sc.toc(T)
